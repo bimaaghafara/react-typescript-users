@@ -28,5 +28,15 @@ export const sx = SxObject({
     width: '20px',
     marginBottom: '-5px',
     marginRight: '4px'
+  },
+  buttons: {
+    borderTop: '1px solid #e8e8e8',
+    background: '#fafafa',
+    flexDirection: 'row',
+    justifyContent: "space-around",
+    padding: "16px",
+  },
+  loveIcon: {
+    color: 'red'
   }
 });
