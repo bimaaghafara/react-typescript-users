@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { TUsers } from "./type";
 import { getUsers } from './service';
-import { Box } from '@mui/material';
+import { Box, Grid } from '@mui/material';
+import UserCard from '../../components/UserCard';
 import { sx } from './style'; 
 
 const Homepage = () => {
@@ -19,12 +20,14 @@ const Homepage = () => {
 
   return (
     <Box sx={sx.root}>
-      <h3>React Typescript Users</h3>
-      {users.map(user => (
-        <Box>
-          <img src={`https://avatars.dicebear.com/v2/avataaars/${user?.username}.svg?options[mood][]=happy`} />
-        </Box>
-      ))}
+      <h1>React Typescript Users</h1>
+      <Grid container spacing={2}>
+        {users.map(user => (
+          <Grid key={user.id} item xs={12} sm={6} md={4} lg={3} xl={2}>
+            <UserCard user={user} />
+          </Grid>
+        ))}
+      </Grid>
     </Box>
   )
 };
